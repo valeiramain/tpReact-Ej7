@@ -2,7 +2,7 @@
 import { Col,ListGroup,Row } from 'react-bootstrap';
 
 const EmpleadoRow = ({ empleado }) => {
-  const { department, fullName, id, pic, title } = { ...empleado };
+  const { department, fullName, pic, title } = { ...empleado };
     return (
         <section className='container border border-secondary'>
             <ListGroup.Item>
