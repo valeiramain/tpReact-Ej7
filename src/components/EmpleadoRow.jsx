@@ -1,28 +1,28 @@
 
-import { Col,ListGroup,Row } from 'react-bootstrap';
+import { ListGroup, Card, Badge } from 'react-bootstrap';
 
 const EmpleadoRow = ({ empleado }) => {
-  const { department, fullName, pic, title } = { ...empleado };
+    const { department, fullName, pic, title } = { ...empleado };
     return (
-        <section className='container border border-secondary'>
-            <ListGroup.Item>
-                <Row className="py-3">
-                    <Col md={3} className="text-center text-md-start">
-                        <img
-                            src={pic}
-                            alt="persona"
-                            className="empeladoAvatar rounded-circle  foto "
-                        />
-                    </Col>
-                    <Col md={9} className="text-center text-md-start">
-                        <h5>{fullName}</h5>
-                        <p>
-                            {title} <span className="badge text-bg-primary">{department}</span>
-                        </p>
-                    </Col>
-                </Row>
-            </ListGroup.Item>
-        </section>
+
+        <ListGroup.Item className="bg-transparent border-0 text-center text-md-start">
+            <Card>
+                <div className="d-md-flex align-items-center">
+                    <Card.Img variant="top" src={pic}
+                        alt="persona"
+                        className="rounded-circle  foto d-block mx-auto mx-md-2 me-md-3 m-2" />
+                    <Card.Body>
+                        <Card.Title>{fullName}</Card.Title>
+
+                        <Card.Text>
+                            {title}
+                            <Badge bg="warning" className="ms-2 text-dark p-2">{department}</Badge>
+                        </Card.Text>
+                    </Card.Body>
+                </div>
+            </Card>
+        </ListGroup.Item >
+
     );
 };
 
